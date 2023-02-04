@@ -1,0 +1,49 @@
+.navbar {
+  padding: 0px var(--xl-padding);
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logoWrapper {
+  height: 42px;
+}
+
+.logo {
+  height: 100%;
+  object-fit: contain;
+}
+
+.navLinks {
+  display: flex;
+  gap: 25px;
+}
+
+.navLinkShow {
+  color: var(--light-slate);
+  font-family: "SF Mono", sans-serif;
+  transition: all 300ms ease-in-out;
+  opacity: 1;
+  transform: translateY(00%);
+
+  .link__title {
+    font-size: 13px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .link__number {
+    margin-right: 5px;
+    color: var(--secondary-color);
+  }
+}
+
+.animate {
+  transition: all 300ms ease-in-out;
+  opacity: 1;
+}
+
+.navlinkHidden {
+  @extend .navLinkShow;
+  opacity: 0;
+  transform: translateY(-100%);
+}
