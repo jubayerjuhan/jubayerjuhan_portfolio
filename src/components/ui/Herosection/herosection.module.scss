@@ -4,3 +4,39 @@
   flex-direction: column;
   justify-content: center;
 }
+
+.helloString {
+  margin: 0px 0px 20px 4px;
+  color: var(--secondary-color);
+  font-family: "SF Mono";
+  font-size: clamp(14px, 4vw, 16px);
+  font-weight: 400;
+}
+
+.name {
+  h3 {
+    line-height: 1.1;
+    color: var(--light-slate);
+    margin: 0px;
+    font-size: clamp(34px, 7vw, 75px);
+    font-weight: 600;
+  }
+}
+
+.tagline {
+  @extend .name;
+  h3 {
+    color: var(--slate);
+  }
+  margin-bottom: 15px;
+}
+
+.description {
+  width: 50%;
+  font-size: clamp(15px, 3vw, 20px);
+  line-height: 1.5;
+  p {
+    color: var(--light-slate);
+    opacity: 0.7;
+  }
+}
