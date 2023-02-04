@@ -4,20 +4,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  max-width: 100vw;
 }
 
 .logoWrapper {
   height: 42px;
+  width: 42px;
 }
 
 .logo {
   height: 100%;
+  width: 100%;
   object-fit: contain;
 }
 
 .navLinks {
   display: flex;
   gap: 25px;
+  align-items: center;
 }
 
 .navLinkShow {
@@ -46,4 +50,76 @@
   @extend .navLinkShow;
   opacity: 0;
   transform: translateY(-100%);
+}
+
+.mobileMenuIcon {
+  color: var(--secondary-color);
+  display: none;
+}
+
+.mobileMenuWrapper {
+  display: none;
+}
+
+.mobileMenuShow {
+  width: 100%;
+  transition: all 300ms ease;
+  transform: translateX(0vw);
+}
+.mobileMenuHide {
+  transition: all 300ms ease;
+  transform: translateX(100vw);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 var(--mobile-xl-padding);
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .mobileMenuIcon {
+    display: block;
+    z-index: 1;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+  }
+
+  .mobileMenuWrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+    overflow: hidden;
+  }
+
+  .placeHolder {
+    width: 100%;
+    height: 100%;
+    flex-basis: 40%;
+    filter: blur(10px);
+  }
+
+  .mobileMenu {
+    flex-basis: 60%;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    padding: 25px;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    gap: 35px;
+
+    .link__title {
+      font-size: 16px;
+    }
+  }
 }

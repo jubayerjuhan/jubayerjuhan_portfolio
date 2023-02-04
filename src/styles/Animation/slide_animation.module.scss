@@ -5,20 +5,24 @@
 
 @-webkit-keyframes slide-top {
   0% {
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
+    opacity: 0;
+    -webkit-transform: translateY(-60%);
+    transform: translateY(-60%);
   }
   100% {
+    opacity: 1;
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }
 }
 @keyframes slide-top {
   0% {
-    -webkit-transform: translateY(-100%);
-    transform: translateY(-100%);
+    opacity: 0;
+    -webkit-transform: translateY(-60%);
+    transform: translateY(-60%);
   }
   100% {
+    opacity: 1;
     -webkit-transform: translateY(0);
     transform: translateY(0);
   }

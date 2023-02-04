@@ -1,6 +1,6 @@
 import React from "react";
 import { useInView } from "react-intersection-observer";
-import styles from "../../styles/Navbar/Navbar.module.scss";
+import styles from "../../../styles/Navbar/Navbar.module.scss";
 
 const Navlink = ({ labelKey, link }) => {
   const { ref, inView, entry } = useInView({ threshold: 0 });

@@ -53,6 +53,7 @@ body {
 
   /* paddings */
   --xl-padding: 50px;
+  --mobile-xl-padding: 25px;
 }
 
 body {
