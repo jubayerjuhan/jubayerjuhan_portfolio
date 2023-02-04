@@ -50,6 +50,7 @@ body {
   --primary-color: #0b192e;
   --secondary-color: #64ffda;
   --light-slate: #ccd6f6;
+  --slate: #8892b0;
 
   /* paddings */
   --xl-padding: 50px;
@@ -58,4 +59,8 @@ body {
 
 body {
   background-color: var(--primary-color);
+}
+
+.sectionPadding {
+  padding: 0px var(--xl-padding);
 }

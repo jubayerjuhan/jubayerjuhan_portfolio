@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import Navbar from "../components/ui/Navbar/Navbar";
+import Herosection from "../components/ui/Herosection/Herosection";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export default function Home() {
       </Head>
       <main>
         <Navbar />
+        <Herosection />
       </main>
     </>
   );
