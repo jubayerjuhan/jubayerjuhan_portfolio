@@ -4,10 +4,14 @@ import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import Navbar from "../components/ui/Navbar/Navbar";
 import Herosection from "../components/ui/Herosection/Herosection";
+import MobileMenu from "@/components/ui/MobileMenu/MobileMenu";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   return (
     <>
       <Head>
@@ -16,8 +20,12 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-        <Navbar />
+      <main style={{ position: "relative" }}>
+        <Navbar
+          setMobileMenuOpen={setMobileMenuOpen}
+          mobileMenuOpen={mobileMenuOpen}
+        />
+        <MobileMenu open={mobileMenuOpen} />
         <Herosection />
       </main>
     </>

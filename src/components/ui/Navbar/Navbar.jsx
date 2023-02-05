@@ -9,9 +9,7 @@ import styles from "../../../styles/Navbar/Navbar.module.scss";
 import animation from "../../../styles/Animation/slide_animation.module.scss";
 import { BiMenuAltRight } from "react-icons/bi";
 
-const Navbar = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
+const Navbar = ({ setMobileMenuOpen, mobileMenuOpen }) => {
   const handleMobileMenuClick = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
@@ -41,7 +39,6 @@ const Navbar = () => {
         <div className={`${styles.mobileMenuIcon} ${animation.slide_bottom}`}>
           <BiMenuAltRight size={40} onClick={handleMobileMenuClick} />
         </div>
-        <MobileMenu open={mobileMenuOpen} />
       </nav>
     </>
   );
