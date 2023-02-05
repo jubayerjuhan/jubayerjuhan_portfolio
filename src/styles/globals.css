@@ -51,6 +51,7 @@ body {
   --secondary-color: #64ffda;
   --light-slate: #ccd6f6;
   --slate: #8892b0;
+  --primary-tint: #64ffda1a;
 
   /* paddings */
   --xl-padding: 50px;

@@ -1,3 +1,4 @@
+import Button from "@/components/core/Button/Button.jsx";
 import React from "react";
 import styles from "./herosection.module.scss";
 
@@ -20,6 +21,7 @@ const Herosection = () => {
           building accessible, human-centered products at Upstatement.
         </p>
       </div>
+      <Button title="View Resume" bigBtn className={styles.button} />
     </section>
   );
 };
