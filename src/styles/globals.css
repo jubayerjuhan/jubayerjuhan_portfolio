@@ -60,6 +60,7 @@ body {
 
   /* margins */
   --xl-margin: 75px;
+  --mobile-xl-margin: 25px;
 }
 
 body {
@@ -70,4 +71,12 @@ body {
 .sectionPadding {
   padding: 0px var(--xxl-padding);
   margin: 0px var(--xl-margin);
+}
+
+/* media queries */
+@media (max-width: 1100px) {
+  .sectionPadding {
+    padding: 0px var(--mobile-xl-padding);
+    margin: 0px var(--mobile-xl-margin);
+  }
 }

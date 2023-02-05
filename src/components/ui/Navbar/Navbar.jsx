@@ -8,6 +8,7 @@ import logo from "../../../assets/Logo.svg";
 import styles from "../../../styles/Navbar/Navbar.module.scss";
 import animation from "../../../styles/Animation/slide_animation.module.scss";
 import { BiMenuAltRight } from "react-icons/bi";
+
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -15,34 +16,34 @@ const Navbar = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  console.log(mobileMenuOpen);
-
   return (
-    <nav className={styles.navbar}>
-      <div className={styles.logoWrapper}>
-        <Image
-          src={logo}
-          alt="Logo"
-          className={`${styles.logo} ${animation.slide_bottom}`}
-        ></Image>
-      </div>
-      <div>
-        <div className={`${styles.navLinks}`}>
-          {navbarLinks.map((link, key) => (
-            <Navlink key={key} link={link} labelKey={key} />
-          ))}
-          <Button
-            title={"Resume"}
-            animated
-            style={{ animationDelay: "500ms" }}
-          />
+    <>
+      <nav className={styles.navbar}>
+        <div className={styles.logoWrapper}>
+          <Image
+            src={logo}
+            alt="Logo"
+            className={`${styles.logo} ${animation.slide_bottom}`}
+          ></Image>
         </div>
-      </div>
-      <div className={styles.mobileMenuIcon}>
-        <BiMenuAltRight size={40} onClick={handleMobileMenuClick} />
-      </div>
-      <MobileMenu open={mobileMenuOpen} />
-    </nav>
+        <div>
+          <div className={`${styles.navLinks}`}>
+            {navbarLinks.map((link, key) => (
+              <Navlink key={key} link={link} labelKey={key} />
+            ))}
+            <Button
+              title={"Resume"}
+              animated
+              style={{ animationDelay: "500ms" }}
+            />
+          </div>
+        </div>
+        <div className={`${styles.mobileMenuIcon} ${animation.slide_bottom}`}>
+          <BiMenuAltRight size={40} onClick={handleMobileMenuClick} />
+        </div>
+        <MobileMenu open={mobileMenuOpen} />
+      </nav>
+    </>
   );
 };
 

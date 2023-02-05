@@ -1,23 +1,26 @@
-import React from "react";
-import Navlink from "../Navbar/Navlink";
-import Button from "../../core/Button/Button";
+import styles from "./mobileMenu.module.scss";
+import MobileNavlink from "../../ui/mobile/MobileNavlink/MobileNavlink.jsx";
 import { navbarLinks } from "../../../data/navbar_data.js";
-import styles from "../../../styles/Navbar/Navbar.module.scss";
+import Button from "@/components/core/Button/Button.jsx";
+
 const MobileMenu = ({ open }) => {
   return (
-    <div className={`${styles.mobileMenuWrapper}`}>
+    <div
+      className={`${styles.mobileMenuWrapper} ${
+        open && styles.mobileMenuVisible
+      }`}
+    >
       <div className={styles.placeHolder}></div>
-      <div className={open ? styles.mobileMenuShow : styles.mobileMenuHide}>
-        <div className={`${styles.navLinks} ${styles.mobileMenu}`}>
-          {navbarLinks.map((link, key) => (
-            <Navlink key={key} link={link} labelKey={key} />
-          ))}
-          <Button
-            title={"Resume"}
-            animated
-            style={{ animationDelay: "500ms" }}
+      <div className={styles.mobileMenu}>
+        {navbarLinks.map((navlink, key) => (
+          <MobileNavlink
+            key={key}
+            index={key}
+            navlink={navlink}
+            styles={styles}
           />
-        </div>
+        ))}
+        <Button />
       </div>
     </div>
   );
