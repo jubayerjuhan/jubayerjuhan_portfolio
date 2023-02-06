@@ -2,9 +2,11 @@ import Head from "next/head";
 import { Inter } from "@next/font/google";
 import { useState } from "react";
 import Navbar from "../components/ui/Navbar/Navbar";
-import Herosection from "../components/ui/Herosection/Herosection";
+import Herosection from "../components/sections/Herosection/Herosection";
 import MobileMenu from "@/components/ui/MobileMenu/MobileMenu";
-import Emailelement from "../components/ui/Emailelement/Emailelement";
+import Emailelement from "../components/ui/Sideelements/Emailelement/Emailelement";
+import SocialLinks from "../components/ui/Sideelements/SocialLinks/SocialLinks";
+import About from "../components/sections/About/About";
 
 const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
@@ -23,10 +25,13 @@ export default function Home() {
           setMobileMenuOpen={setMobileMenuOpen}
           mobileMenuOpen={mobileMenuOpen}
         />
+
         <MobileMenu open={mobileMenuOpen} />
-        <Herosection />
         {/* side elements*/}
         <Emailelement />
+        <SocialLinks />
+        <Herosection />
+        <About />
       </main>
     </>
   );

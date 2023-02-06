@@ -7,6 +7,7 @@
   flex-direction: column;
   align-items: center;
   gap: 30px;
+  animation-delay: 1300ms;
 
   a {
     text-decoration: none;
@@ -27,4 +28,15 @@
   height: 100px;
   width: 1px;
   background-color: var(--light-slate);
+}
+
+@media (max-width: 1100px) {
+  .emailElement {
+    right: 25px;
+  }
+}
+@media (max-width: 768px) {
+  .emailElement {
+    display: none;
+  }
 }

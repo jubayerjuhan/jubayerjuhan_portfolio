@@ -1,0 +1,28 @@
+.sectionHeader {
+  display: flex;
+  color: var(--light-slate);
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+
+.count {
+  margin-right: 12px;
+  font-size: clamp(var(--regular-font), 4vh, var(--xl-font));
+  font-family: "SF Mono", monospace;
+  color: var(--secondary-color);
+  margin-top: 4px;
+}
+.title {
+  font-size: clamp(var(--small-header-font), 4vw, var(--heading-font));
+  font-weight: 600;
+  line-height: 1;
+}
+
+.horizontalLine {
+  height: 1px;
+  flex: 1;
+  background-color: var(--lightest-navy);
+  margin-left: 30px;
+  margin-top: 5px;
+}

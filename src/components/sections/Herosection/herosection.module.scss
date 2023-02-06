@@ -39,7 +39,7 @@
 
 .description {
   width: 70%;
-  font-size: clamp(16px, 3vw, 20px);
+  font-size: clamp(var(--large-font), 2vw, var(--xl-font));
   line-height: 1.5;
   animation-delay: 900ms;
 
