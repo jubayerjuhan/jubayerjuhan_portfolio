@@ -20,7 +20,7 @@ const MobileMenu = ({ open }) => {
             styles={styles}
           />
         ))}
-        <Button />
+        <Button title="Resume" />
       </div>
     </div>
   );

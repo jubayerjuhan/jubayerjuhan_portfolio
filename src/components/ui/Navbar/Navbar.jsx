@@ -8,6 +8,7 @@ import logo from "../../../assets/Logo.svg";
 import styles from "../../../styles/Navbar/Navbar.module.scss";
 import animation from "../../../styles/Animation/slide_animation.module.scss";
 import { BiMenuAltRight } from "react-icons/bi";
+import { RxCross1 } from "react-icons/rx";
 
 const Navbar = ({ setMobileMenuOpen, mobileMenuOpen }) => {
   const handleMobileMenuClick = () => {
@@ -36,9 +37,24 @@ const Navbar = ({ setMobileMenuOpen, mobileMenuOpen }) => {
             />
           </div>
         </div>
-        <div className={`${styles.mobileMenuIcon} ${animation.slide_bottom}`}>
-          <BiMenuAltRight size={40} onClick={handleMobileMenuClick} />
-        </div>
+        <BiMenuAltRight
+          size={40}
+          onClick={handleMobileMenuClick}
+          className={`${styles.mobileMenuIcon} ${animation.slide_bottom} ${
+            mobileMenuOpen
+              ? styles.mobilemenuIconHide
+              : styles.mobileMenuIconShow
+          }`}
+        />
+        <RxCross1
+          size={30}
+          onClick={handleMobileMenuClick}
+          className={`${styles.mobileMenuIcon} ${animation.slide_bottom} ${
+            mobileMenuOpen
+              ? styles.mobileMenuIconShow
+              : styles.mobilemenuIconHide
+          }`}
+        />
       </nav>
     </>
   );
