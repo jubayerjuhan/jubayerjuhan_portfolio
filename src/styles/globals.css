@@ -61,16 +61,22 @@ body {
   /* margins */
   --xl-margin: 75px;
   --mobile-xl-margin: 25px;
+
+  /* font sizes */
+  --xs-font: 12px;
+  --small-font: 14px;
+  --regular-font: 16px;
+  --large-font: 18px;
+  --xl-font: 20px;
 }
 
 body {
   background-color: var(--primary-color);
   -webkit-font-smoothing: antialiased;
-  overflow: hidden !important;
 }
 
 main {
-  overflow: hidden !important;
+  overflow-x: hidden !important;
 }
 
 .sectionPadding {

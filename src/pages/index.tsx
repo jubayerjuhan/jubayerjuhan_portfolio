@@ -1,14 +1,12 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "@next/font/google";
-import styles from "@/styles/Home.module.css";
+import { useState } from "react";
 import Navbar from "../components/ui/Navbar/Navbar";
 import Herosection from "../components/ui/Herosection/Herosection";
 import MobileMenu from "@/components/ui/MobileMenu/MobileMenu";
-import { useState } from "react";
+import Emailelement from "../components/ui/Emailelement/Emailelement";
 
 const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -27,6 +25,8 @@ export default function Home() {
         />
         <MobileMenu open={mobileMenuOpen} />
         <Herosection />
+        {/* side elements*/}
+        <Emailelement />
       </main>
     </>
   );

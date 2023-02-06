@@ -1,0 +1,30 @@
+.emailElement {
+  position: fixed;
+  bottom: 0;
+  right: var(--xl-padding);
+  font-family: "SF Mono";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+
+  a {
+    text-decoration: none;
+    color: var(--light-slate);
+    writing-mode: vertical-rl;
+    font-size: var(--xs-font);
+    letter-spacing: 1.4px;
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+      color: var(--secondary-color);
+      transform: translateY(-10px);
+    }
+  }
+}
+
+.placeHolder {
+  height: 100px;
+  width: 1px;
+  background-color: var(--light-slate);
+}
