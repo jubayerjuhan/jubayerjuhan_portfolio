@@ -16,6 +16,11 @@ const font = localFont({
       weight: "600",
       style: "normal",
     },
+    // {
+    //   path: "https://fonts.cdnfonts.com/css/sf-mono",
+    //   weight: "700",
+    //   style: "normal",
+    // },
   ],
 });
 
