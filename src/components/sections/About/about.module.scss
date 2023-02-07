@@ -1,6 +1,10 @@
 @use "../../../styles/Animation/slide_animation.module.scss" as animations;
 @use "../../../styles/Animation/slide_mixins.modules.scss" as sectionAnimations;
 
+.aboutWrapper {
+  padding: 0px 40px;
+}
+
 .about {
   display: none;
   min-height: 100vh;
@@ -74,6 +78,7 @@
     background-color: var(--secondary-color);
     opacity: 1;
     transition: all 300ms ease-in-out;
+    border-radius: var(--border-radius);
   }
   &::after {
     content: "";
@@ -103,6 +108,12 @@
     border-radius: var(--border-radius);
     height: 100%;
     width: 100%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .aboutWrapper {
+    padding: 0px 0px;
   }
 }
 
