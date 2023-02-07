@@ -57,3 +57,33 @@
     transform: translateY(0);
   }
 }
+
+@mixin slidein($time: 1s) {
+  -webkit-animation: slide-top $time cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top $time cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+
+  @-webkit-keyframes slide-top {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(60%);
+      transform: translateY(60%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+  @keyframes slide-top {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(60%);
+      transform: translateY(60%);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  }
+}

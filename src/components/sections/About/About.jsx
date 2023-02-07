@@ -1,15 +1,23 @@
 import Image from "next/image.js";
 import React from "react";
+import { useInView } from "react-intersection-observer";
 import profilePicture from "../../../assets/profile-pic.png";
 import SectionHeader from "../../ui/SectionHeader/SectionHeader";
+import animation from "../../../styles/Animation/slide_animation.module.scss";
 import styles from "./about.module.scss";
 
 const About = () => {
+  const { ref, inView, entry } = useInView({ threshold: 0 });
+
   return (
-    <div className={` sectionPadding ${styles.about}`}>
+    <div
+      className={` sectionPadding ${styles.about} ${
+        inView && styles.showAbout
+      }`}
+    >
       <SectionHeader />
       <div className={styles.contentWrapper}>
-        <div className={styles.textSection}>
+        <div className={styles.textSection} ref={ref}>
           <div className={styles.description}>
             <p>
               Hello! My name is Brittany and I enjoy creating things that live
