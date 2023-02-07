@@ -1,0 +1,76 @@
+$button-height: 42px;
+
+.work {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.workContainer {
+  width: 700px;
+}
+
+.workExperiences {
+  position: relative;
+}
+
+.companies {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+  width: fit-content;
+
+  .company_name_active {
+    background-color: #112240;
+    color: var(--secondary-color);
+  }
+}
+
+.workExperiences {
+  display: flex;
+  flex: 1;
+  gap: 30px;
+}
+
+.experience {
+  .title {
+    font-weight: 600;
+    font-size: clamp(var(--xl-font), 3vw, var(--xxl-font));
+    color: var(--light-slate);
+    margin-bottom: 10px;
+
+    span {
+      color: var(--secondary-color);
+    }
+  }
+
+  .timeline {
+    color: var(--slate);
+    font-size: clamp(var(--xs-font), 3vw, var(--small-font));
+    font-family: "SF Mono", monospace;
+    margin-bottom: 20px;
+  }
+}
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  .task {
+    position: relative;
+    list-style: none;
+    color: var(--slate);
+    padding-left: 30px;
+    font-size: clamp(var(--regular-font), 3vw, var(--large-font));
+
+    &::before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: var(--secondary-color);
+    }
+  }
+}

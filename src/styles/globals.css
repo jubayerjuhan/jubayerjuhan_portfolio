@@ -67,12 +67,13 @@ body {
   --mobile-xxl-margin: 50px;
 
   /* font sizes */
+  --xxs-font: 10px;
   --xs-font: 12px;
   --small-font: 14px;
   --regular-font: 16px;
   --large-font: 18px;
   --xl-font: 20px;
-  --xxl-font: 25px;
+  --xxl-font: 24px;
   --small-header-font: 26px;
   --heading-font: 32px;
 
@@ -90,6 +91,7 @@ main {
 }
 
 .sectionPadding {
+  min-height: 100vh;
   padding: 0px var(--xxl-padding);
   margin: 0px var(--xl-margin);
 }

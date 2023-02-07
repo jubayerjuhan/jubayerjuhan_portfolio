@@ -1,0 +1,10 @@
+$button-height: 42px;
+
+.dynamic_scroll {
+  left: 0;
+  position: absolute;
+  height: $button-height;
+  width: 2px;
+  background-color: var(--secondary-color);
+  transition: all 300ms ease;
+}
