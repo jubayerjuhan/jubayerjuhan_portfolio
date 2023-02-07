@@ -1,0 +1,9 @@
+@mixin slide_hidden($time: 300ms, $distance: 100px) {
+  opacity: 0;
+  transition: all $time ease;
+  transform: translateY($distance);
+}
+@mixin slide_reveal($distance: 00px) {
+  opacity: 1;
+  transform: translateY($distance);
+}
