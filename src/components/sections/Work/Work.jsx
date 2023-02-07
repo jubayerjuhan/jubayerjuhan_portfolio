@@ -5,19 +5,30 @@ import Experience from "../../ui/Experience/Experience.jsx";
 import CompanyButton from "../../core/CompanyButton/CompanyButton";
 import DynamicScroll from "../../core/Dynamicscroll/DynamicScroll";
 import styles from "./work.module.scss";
+import { useInView } from "react-intersection-observer";
 
 const Work = () => {
+  const { ref, inView } = useInView({ threshold: 0 });
+
   const [selectedIndex, setSelectedIndex] = useState(0);
   const handleButtonClick = (key) => {
     setSelectedIndex(key);
   };
-
-  console.log(workExperiences[selectedIndex]);
   return (
     <section className={`sectionPadding ${styles.work}`}>
-      <div className={styles.workContainer}>
-        <SectionHeader title={"Where I’ve Worked"} number={1} />
-        <div className={styles.workExperiences}>
+      <div className={styles.workContainer} ref={ref}>
+        <div
+          className={`${styles.sectionHeader} ${
+            inView && styles.sectionHeader_active
+          }`}
+        >
+          <SectionHeader title={"Where I’ve Worked"} number={1} />
+        </div>
+        <div
+          className={`${styles.workExperiences} ${
+            inView && styles.workExperiences_inView
+          }`}
+        >
           <DynamicScroll selectedIndex={selectedIndex} />
           <div className={styles.companies}>
             {workExperiences.map((experience, key) => (

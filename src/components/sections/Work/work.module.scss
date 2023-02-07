@@ -5,14 +5,20 @@ $button-height: 42px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
 }
 
 .workContainer {
   width: 700px;
 }
 
+.sectionHeader {
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.sectionHeader_active {
+  opacity: 1;
+}
 .workExperiences {
   position: relative;
 }
@@ -33,6 +39,14 @@ $button-height: 42px;
   display: flex;
   flex: 1;
   gap: 30px;
+  opacity: 0;
+  transition: all 0.5s ease;
+  transform: translateY(100%);
+}
+
+.workExperiences_inView {
+  opacity: 1;
+  transform: translateY(00px);
 }
 
 .experience {
