@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap");
 @import url("https://fonts.cdnfonts.com/css/sf-mono");
 
-@font-face {
+/* @font-face {
   font-family: "Calibre";
   src: url("../font/test-calibre-regular.woff2") format("woff2");
   font-weight: normal;
@@ -33,7 +33,7 @@
   src: url("../font/test-calibre-bold-italic.woff2") format("woff2");
   font-weight: bold;
   font-style: italic;
-}
+} */
 
 * {
   margin: 0;
@@ -42,7 +42,7 @@
 }
 
 body {
-  font-family: "Calibre", "Inter";
+  font-family: "Calibre";
 }
 
 :root {
