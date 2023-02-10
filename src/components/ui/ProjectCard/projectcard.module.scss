@@ -1,0 +1,65 @@
+.projectCard {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+}
+.imageWrapper {
+  grid-area: 1/1/1/8;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
+}
+
+.textWrapper {
+  grid-area: 1/7/1/-1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.subtitle {
+  font-size: clamp(var(--xs-font), 1vw, var(--small-font));
+  font-family: "SF Mono", monospace;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: clamp(var(--small-header-font), 4vw, var(--heading-font));
+  color: var(--light-slate);
+  text-decoration: none;
+  font-weight: bold;
+  margin-left: 16%;
+  margin-bottom: 15px;
+}
+
+.description_wrapper {
+  padding: var(--small-padding);
+  background-color: var(--light-navy);
+  border-radius: var(--border-radius);
+  box-shadow: var(--light-navy) 0px 2px 8px 0px;
+  margin-bottom: 25px;
+
+  .description {
+    font-size: clamp(var(--regular-font), 2vw, var(--large-font));
+    line-height: 1.5;
+    color: var(--light-slate);
+  }
+}
+
+.techs {
+  margin-left: 16%;
+
+  display: flex;
+  gap: 20px;
+}
+
+.tech {
+  font-size: clamp(var(--xs-font), 2vw, var(--small-font));
+  color: var(--slate);
+  font-family: "SF Mono", monospace;
+}

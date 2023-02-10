@@ -17,3 +17,10 @@ $button-height: 42px;
     color: var(--secondary-color);
   }
 }
+
+@media (max-width: 768px) {
+  .company_btn {
+    border: none;
+    border-bottom: 2px solid var(--lightest-navy);
+  }
+}

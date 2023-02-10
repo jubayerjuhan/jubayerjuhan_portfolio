@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SectionHeader from "@/components/ui/SectionHeader/SectionHeader.jsx";
 import { workExperiences } from "../../../data/work_experience.js";
 import Experience from "../../ui/Experience/Experience.jsx";
@@ -9,24 +9,32 @@ import { useInView } from "react-intersection-observer";
 
 const Work = () => {
   const { ref, inView } = useInView({ threshold: 0 });
+  const [showed, setShowed] = useState(false);
+
+  useEffect(() => {
+    if (inView) {
+      setShowed(true);
+    }
+  }, [inView]);
 
   const [selectedIndex, setSelectedIndex] = useState(0);
   const handleButtonClick = (key) => {
     setSelectedIndex(key);
   };
+
   return (
     <section className={`sectionPadding ${styles.work}`}>
       <div className={styles.workContainer} ref={ref}>
         <div
           className={`${styles.sectionHeader} ${
-            inView && styles.sectionHeader_active
+            (inView || showed) && styles.sectionHeader_active
           }`}
         >
           <SectionHeader title={"Where I’ve Worked"} number={1} />
         </div>
         <div
           className={`${styles.workExperiences} ${
-            inView && styles.workExperiences_inView
+            (inView || showed) && styles.workExperiences_inView
           }`}
         >
           <DynamicScroll selectedIndex={selectedIndex} />

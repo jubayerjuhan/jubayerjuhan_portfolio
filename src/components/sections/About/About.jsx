@@ -1,5 +1,5 @@
 import Image from "next/image.js";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
 import profilePicture from "../../../assets/profile-pic.png";
 import SectionHeader from "../../ui/SectionHeader/SectionHeader";
@@ -8,12 +8,19 @@ import styles from "./about.module.scss";
 
 const About = () => {
   const { ref, inView } = useInView({ threshold: 0 });
+  const [showed, setShowed] = useState(false);
+
+  useEffect(() => {
+    if (inView) {
+      setShowed(true);
+    }
+  }, [inView]);
 
   return (
     <section className={styles.aboutWrapper}>
       <div
         className={` sectionPadding ${styles.about} ${
-          inView && styles.showAbout
+          (inView || showed) && styles.showAbout
         }`}
       >
         <SectionHeader />

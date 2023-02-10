@@ -88,3 +88,18 @@ $button-height: 42px;
     }
   }
 }
+
+@media (max-width: 768px) {
+  .workContainer {
+    width: 100%;
+  }
+
+  .workExperiences {
+    flex-direction: column;
+  }
+
+  .companies {
+    display: flex;
+    flex-direction: row;
+  }
+}

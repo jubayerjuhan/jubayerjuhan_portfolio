@@ -8,6 +8,7 @@ import Emailelement from "../components/ui/Sideelements/Emailelement/Emailelemen
 import SocialLinks from "../components/ui/Sideelements/SocialLinks/SocialLinks";
 import About from "../components/sections/About/About";
 import Work from "../components/sections/Work/Work";
+import ThingsIBuilt from "../components/sections/ThingsIBuilt/ThingsIBuilt";
 
 const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
@@ -34,6 +35,7 @@ export default function Home() {
         <Herosection />
         <About />
         <Work />
+        <ThingsIBuilt />
       </main>
     </>
   );

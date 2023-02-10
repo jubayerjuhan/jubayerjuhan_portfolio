@@ -53,8 +53,12 @@ body {
   --slate: #8892b0;
   --primary-tint: #64ffda1a;
   --lightest-navy: #233554;
+  --light-navy: #112240;
 
   /* paddings */
+  --small-padding: 20px;
+  --xs-padding: 25px;
+  --large-padding: 30px;
   --xl-padding: 50px;
   --xxl-padding: 150px;
   --mobile-xl-padding: 25px;
