@@ -1,0 +1,9 @@
+.thingIBuilt {
+  margin-top: var(--xl-margin);
+}
+
+.builts {
+  display: flex;
+  flex-direction: column;
+  gap: var(--xxl-padding);
+}

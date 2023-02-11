@@ -1,5 +1,6 @@
 @use "../../../styles/Animation/slide_animation.module.scss" as animations;
 @use "../../../styles/Animation/slide_mixins.modules.scss" as sectionAnimations;
+@use "../../../styles/mixins/photoMixins.module.scss" as mixins;
 
 .aboutWrapper {
   padding: 0px 40px;
@@ -63,22 +64,8 @@
 }
 
 .profilePicture__wrapper {
-  position: relative;
-  height: 280px;
-  width: 280px;
-  transition: all 300ms ease-in-out;
+  @include mixins.hoverablePhoto(280px, 280px, true);
 
-  &::before {
-    content: "";
-    position: absolute;
-    width: 280px;
-    height: 280px;
-    mix-blend-mode: multiply;
-    background-color: var(--secondary-color);
-    opacity: 1;
-    transition: all 300ms ease-in-out;
-    border-radius: var(--border-radius);
-  }
   &::after {
     content: "";
     position: absolute;
@@ -91,22 +78,6 @@
     z-index: -1;
     transition: all 300ms ease-in-out;
     border-radius: var(--border-radius);
-  }
-
-  &:hover {
-    &::before {
-      background-color: transparent;
-    }
-    &::after {
-      left: 15px;
-      top: 15px;
-    }
-  }
-
-  img {
-    border-radius: var(--border-radius);
-    height: 100%;
-    width: 100%;
   }
 }
 

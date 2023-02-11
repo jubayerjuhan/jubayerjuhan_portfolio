@@ -1,10 +1,8 @@
-.projectCard {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 10px;
-}
+@use "../../../styles/mixins/photoMixins.module.scss" as mixins;
+
 .imageWrapper {
   grid-area: 1/1/1/8;
+  @include mixins.hoverablePhoto(100%, 100%, false);
 
   img {
     height: 100%;
@@ -13,7 +11,31 @@
   }
 }
 
+.projectCard {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 10px;
+
+  &:nth-of-type(2n + 1) {
+    .imageWrapper {
+      grid-column: 6/-1;
+    }
+
+    .textWrapper {
+      grid-column: 1/7;
+      align-items: flex-start;
+    }
+
+    .title,
+    .techs {
+      margin-left: unset;
+      margin-right: 16%;
+    }
+  }
+}
+
 .textWrapper {
+  z-index: 1;
   grid-area: 1/7/1/-1;
   display: flex;
   flex-direction: column;
@@ -45,7 +67,7 @@
   margin-bottom: 25px;
 
   .description {
-    font-size: clamp(var(--regular-font), 2vw, var(--large-font));
+    font-size: clamp(var(--small-font), 2vw, var(--regular-font));
     line-height: 1.5;
     color: var(--light-slate);
   }
