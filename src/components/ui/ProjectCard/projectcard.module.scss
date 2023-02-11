@@ -45,7 +45,7 @@
 
 .subtitle {
   font-size: clamp(var(--xs-font), 1vw, var(--small-font));
-  font-family: "SF Mono", monospace;
+  font-family: "Space Mono", monospace;
   color: var(--secondary-color);
   margin-bottom: 10px;
 }
@@ -83,7 +83,7 @@
 .tech {
   font-size: clamp(var(--xs-font), 2vw, var(--small-font));
   color: var(--slate);
-  font-family: "SF Mono", monospace;
+  font-family: "Space Mono", monospace;
 }
 
 @media (max-width: 768px) {

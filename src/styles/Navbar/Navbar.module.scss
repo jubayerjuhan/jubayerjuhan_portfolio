@@ -27,13 +27,14 @@
 
 .navLinkShow {
   color: var(--light-slate);
-  font-family: "SF Mono", sans-serif;
+  font-family: "Space Mono", sans-serif;
   transition: all 300ms ease-in-out;
   opacity: 1;
 
   transform: translateY(00%);
 
   .link__title {
+    font-family: "Space Mono", sans-serif;
     font-size: 13px;
     -webkit-font-smoothing: antialiased;
     cursor: pointer;
@@ -43,6 +44,7 @@
     }
   }
   .link__number {
+    font-family: "Space Mono", sans-serif;
     margin-right: 5px;
     color: var(--secondary-color);
   }

@@ -22,6 +22,14 @@ const font = localFont({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={font.className}>
+      <header>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+          rel="stylesheet"
+        />
+      </header>
       <Component {...pageProps} />
     </main>
   );
