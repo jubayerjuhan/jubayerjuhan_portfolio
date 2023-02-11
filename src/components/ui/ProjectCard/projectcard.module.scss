@@ -85,3 +85,54 @@
   color: var(--slate);
   font-family: "SF Mono", monospace;
 }
+
+@media (max-width: 768px) {
+  .projectCard {
+    all: unset;
+    position: relative;
+
+    &::after {
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      background-color: red;
+    }
+  }
+
+  .textWrapper {
+    position: absolute;
+    bottom: 0;
+  }
+
+  .imageWrapper {
+    position: relative;
+    img {
+      opacity: 0.08;
+      filter: grayscale(100);
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .description_wrapper {
+    padding: 10px;
+  }
+
+  .projectCard {
+    .subtitle {
+      font-size: var(--xxs-font);
+    }
+    .title {
+      font-size: var(--xl-font);
+    }
+
+    .description {
+      font-size: var(--xs-font);
+    }
+
+    .tech {
+      white-space: nowrap;
+      font-size: var(--xxs-font);
+    }
+  }
+}
