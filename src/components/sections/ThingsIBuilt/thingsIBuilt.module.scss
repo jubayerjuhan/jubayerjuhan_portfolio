@@ -1,6 +1,19 @@
-.thingIBuilt {
+.thingsIBuilt {
   margin-top: var(--xl-margin);
   margin-bottom: var(--xxl-margin);
+
+  .sectionHead {
+    opacity: 0;
+    transition: all 300ms ease-in-out;
+  }
+  .sectionHeadActive {
+    opacity: 1;
+  }
+}
+
+.hide {
+  opacity: 0;
+  transform: translateY(50%);
 }
 
 .builts {
