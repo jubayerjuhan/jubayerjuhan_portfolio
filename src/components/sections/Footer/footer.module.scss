@@ -1,0 +1,55 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: var(--large-margin);
+
+  .headerTip {
+    font-size: clamp(var(--regular-font), 2vw, var(--large-font));
+    color: var(--secondary-color);
+    font-family: "SF Mono";
+    margin-bottom: var(--small-margin);
+  }
+
+  .title {
+    font-size: clamp(32px, 3vw, 40px);
+    font-weight: 600;
+    color: var(--light-slate);
+    margin-bottom: var(--small-margin);
+  }
+
+  .description {
+    max-width: 600px;
+    margin-bottom: var(--xl-margin);
+    margin-top: var(--large-margin);
+    font-size: clamp(var(--large-font), 2vw, var(--xl-font));
+    color: var(--light-slate);
+    line-height: 1.3;
+    text-align: center;
+  }
+}
+
+.developer {
+  position: absolute;
+  bottom: 0px;
+  padding-bottom: var(--large-margin);
+  color: var(--slate);
+  font-family: "SF Mono", monospace;
+  font-size: clamp(var(--xxs-font), 2vw, var(--xs-font));
+  transition: all 300ms ease-in-out;
+
+  &:hover {
+    color: var(--secondary-color);
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    .description {
+      margin-bottom: var(--large-margin);
+      margin-top: var(--small-margin);
+    }
+  }
+}

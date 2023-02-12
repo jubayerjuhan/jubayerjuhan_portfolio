@@ -10,6 +10,7 @@ import About from "../components/sections/About/About";
 import Work from "../components/sections/Work/Work";
 import ThingsIBuilt from "../components/sections/ThingsIBuilt/ThingsIBuilt";
 import OtherProjects from "../components/sections/OtherProjects/OtherProjects";
+import Footer from "../components/sections/Footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
@@ -38,6 +39,7 @@ export default function Home() {
         <Work />
         <ThingsIBuilt />
         <OtherProjects />
+        <Footer />
       </main>
     </>
   );
