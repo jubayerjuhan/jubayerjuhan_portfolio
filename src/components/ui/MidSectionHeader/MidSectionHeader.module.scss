@@ -1,0 +1,40 @@
+.midSectionHeader {
+  display: grid;
+  place-items: center;
+  margin-bottom: var(--large-margin);
+
+  .title {
+    font-weight: 600;
+    color: var(--light-slate);
+    font-size: clamp(var(--small-header-font), 3vw, var(--heading-font));
+    margin-bottom: var(--gap-small);
+  }
+
+  .linkWrapper {
+    position: relative;
+    overflow: hidden;
+    &::after {
+      transition: all 300ms ease-in-out;
+      position: absolute;
+      content: "";
+      height: 1px;
+      background-color: var(--secondary-color);
+      width: 100%;
+      left: -100%;
+      bottom: 0;
+    }
+
+    &:hover {
+      &::after {
+        width: 100%;
+        left: 00%;
+      }
+    }
+  }
+  .linkedDescription {
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-family: "SF Mono", monospace;
+    font-size: var(--xs-font);
+  }
+}

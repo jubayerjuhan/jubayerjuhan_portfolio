@@ -9,6 +9,7 @@ import SocialLinks from "../components/ui/Sideelements/SocialLinks/SocialLinks";
 import About from "../components/sections/About/About";
 import Work from "../components/sections/Work/Work";
 import ThingsIBuilt from "../components/sections/ThingsIBuilt/ThingsIBuilt";
+import OtherProjects from "../components/sections/OtherProjects/OtherProjects";
 
 const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
@@ -36,6 +37,7 @@ export default function Home() {
         <About />
         <Work />
         <ThingsIBuilt />
+        <OtherProjects />
       </main>
     </>
   );

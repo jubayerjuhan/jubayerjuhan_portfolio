@@ -1,0 +1,47 @@
+.cardHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--small-margin);
+
+  .icon {
+    font-size: 40px;
+    color: var(--secondary-color);
+  }
+  .linkIcon {
+    font-size: 20px;
+    color: var(--light-slate);
+  }
+}
+
+.squareProjectCard {
+  cursor: pointer;
+  border-radius: var(--border-radius);
+  padding: var(--small-padding);
+  background-color: var(--lightest-navy);
+
+  .title {
+    font-size: clamp(var(--regular-font), 3vw, var(--xl-font));
+    font-weight: 600;
+    color: var(--light-slate);
+    margin-bottom: var(--xs-margin);
+  }
+
+  .description {
+    font-size: clamp(var(--small-font), 2vw, var(--regular-font));
+    color: var(--slate);
+    margin-bottom: calc(5px + var(--xs-margin));
+  }
+
+  .techs {
+    display: flex;
+    gap: var(--gap-small);
+
+    .tech {
+      font-size: clamp(var(--xxs-font), 1vw, var(--xs-font));
+      font-family: "SF Mono", monospace;
+      color: var(--slate);
+    }
+  }
+}

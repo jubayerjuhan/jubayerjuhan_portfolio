@@ -1,5 +1,6 @@
 .thingIBuilt {
   margin-top: var(--xl-margin);
+  margin-bottom: var(--xxl-margin);
 }
 
 .builts {
@@ -12,5 +13,9 @@
 @media (max-width: 768px) {
   .builts {
     gap: var(--xl-padding);
+  }
+  .thingIBuilt {
+    margin-top: var(--xl-margin);
+    margin-bottom: var(--xl-margin);
   }
 }

@@ -1,0 +1,18 @@
+.otherProjects {
+  padding-top: var(--xl-padding);
+  margin-bottom: var(--large-margin);
+}
+
+.projects {
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: var(--gap-large);
+}
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 0 20px;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
