@@ -8,7 +8,7 @@
   .headerTip {
     font-size: clamp(var(--regular-font), 2vw, var(--large-font));
     color: var(--secondary-color);
-    font-family: "SF Mono";
+    font-family: "Space Mono", monospace;
     margin-bottom: var(--small-margin);
   }
 
@@ -35,7 +35,7 @@
   bottom: 0px;
   padding-bottom: var(--large-margin);
   color: var(--slate);
-  font-family: "SF Mono", monospace;
+  font-family: "Space Mono", monospace;
   font-size: clamp(var(--xxs-font), 2vw, var(--xs-font));
   transition: all 300ms ease-in-out;
 
