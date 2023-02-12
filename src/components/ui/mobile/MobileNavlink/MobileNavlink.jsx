@@ -4,7 +4,7 @@ import navStyle from "./mobileNavlink.module.scss";
 
 const MobileNavlink = ({ navlink, styles, index: key }) => {
   const { ref, inView, entry } = useInView({ threshold: 0 });
-  console.log(inView, "inview..");
+  console.log(inView, "inview..yooo");
 
   return (
     <div
