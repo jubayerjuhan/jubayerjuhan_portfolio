@@ -86,6 +86,23 @@
   font-family: "Space Mono", monospace;
 }
 
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--xs-padding);
+  margin-top: var(--xs-padding);
+  margin-bottom: 10px;
+  margin-left: 10px;
+
+  .linkIcon {
+    cursor: pointer;
+    svg {
+      color: var(--light-slate);
+      font-size: var(--xxl-font);
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .projectCard {
     all: unset;
@@ -109,6 +126,16 @@
     img {
       opacity: 0.08;
       filter: grayscale(100);
+    }
+  }
+
+  .links {
+    gap: var(--gap-large);
+    .linkIcon {
+      svg {
+        color: var(--light-slate);
+        font-size: var(--xl-font);
+      }
     }
   }
 }

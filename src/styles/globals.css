@@ -31,6 +31,12 @@ body {
   --mobile-xl-padding: 25px;
   --mobile-xxl-padding: 50px;
 
+  /* gap */
+  --gap-xs: 5px;
+  --gap-small: 10px;
+  --gap-large: 20px;
+  --gap-xl: 30px;
+
   /* margins */
   --large-margin: 50px;
   --xl-margin: 75px;

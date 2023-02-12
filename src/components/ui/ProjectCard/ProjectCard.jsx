@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./projectcard.module.scss";
 import projectImage from "../../../assets/project1.png";
 import Link from "next/link.js";
+import { FiExternalLink, FiGithub } from "react-icons/fi";
 const ProjectCard = () => {
   return (
     <div className={styles.projectCard}>
@@ -27,6 +28,14 @@ const ProjectCard = () => {
           <div className={styles.tech}>JavaScript</div>
           <div className={styles.tech}>React</div>
           <div className={styles.tech}>Redux</div>
+        </div>
+        <div className={styles.links}>
+          <div className={styles.linkIcon}>
+            <FiGithub />
+          </div>
+          <div className={styles.linkIcon}>
+            <FiExternalLink />
+          </div>
         </div>
       </div>
     </div>
