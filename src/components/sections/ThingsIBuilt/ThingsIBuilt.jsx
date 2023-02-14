@@ -23,9 +23,12 @@ const ThingsIBuilt = () => {
         <SectionHeader title={"Thing's I've Built"} number={2} />
       </div>
       <div className={`${styles.builts}`}>
-        {siteSettings.projects?.map((project, key) => (
-          <ProjectCard style={styles.hide} key={key} project={project} />
-        ))}
+        {siteSettings.projects?.map((project, key) => {
+          if (project.type !== "featured") return <div key={key}></div>;
+          return (
+            <ProjectCard style={styles.hide} key={key} project={project} />
+          );
+        })}
       </div>
     </section>
   );

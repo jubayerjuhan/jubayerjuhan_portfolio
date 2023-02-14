@@ -1,14 +1,19 @@
 import React from "react";
 import { HiOutlineFolder } from "react-icons/hi";
 import { FiExternalLink } from "react-icons/fi";
-const CardHeader = ({ styles }) => {
+import Link from "next/link.js";
+const CardHeader = ({ styles, project }) => {
   return (
     <div className={styles.cardHeader}>
       <div className={styles.icon}>
+        {/* <Link href={project.githubLink} target={"_blank"}> */}
         <HiOutlineFolder />
+        {/* </Link> */}
       </div>
       <div className={styles.linkIcon}>
-        <FiExternalLink />
+        <Link href={project.liveLink} target={"_blank"}>
+          <FiExternalLink style={{ color: "var(--light-slate)" }} size={23} />
+        </Link>
       </div>
     </div>
   );

@@ -2,20 +2,20 @@ import React from "react";
 import CardHeader from "./CardHeader";
 import styles from "./squareProjectCard.module.scss";
 
-const SquareProjectCard = () => {
+const SquareProjectCard = ({ project }) => {
   return (
     <div className={styles.squareProjectCard}>
-      <CardHeader styles={styles} />
-      <div className={styles.title}>
-        Integrating Algolia Search with WordPress Multisite
-      </div>
-      <div className={styles.description}>
-        Building a custom multisite compatible WordPress plugin to build global
-        search with Algolia
-      </div>
+      <CardHeader styles={styles} project={project} />
+      <div className={styles.title}>{project.name}</div>
+      <div className={styles.description}>{project.description}</div>
       <div className={styles.techs}>
-        <div className={styles.tech}>Redux</div>
-        <div className={styles.tech}>React</div>
+        {project.technologies?.map((technology, key) => {
+          return (
+            <div className={styles.tech} key={key}>
+              {technology?.name}
+            </div>
+          );
+        })}
       </div>
     </div>
   );

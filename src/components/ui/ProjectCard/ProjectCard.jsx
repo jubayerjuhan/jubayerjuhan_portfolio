@@ -37,7 +37,7 @@ const ProjectCard = ({ style: parentStyle, project }) => {
             {project?.name}{" "}
           </Link>
           <div className={styles.description_wrapper}>
-            <p className={styles.description}>{project?.desctiption}</p>
+            <p className={styles.description}>{project?.description}</p>
           </div>
           <div className={styles.techs}>
             {project.technologies.map((technology, key) => (
@@ -48,10 +48,14 @@ const ProjectCard = ({ style: parentStyle, project }) => {
           </div>
           <div className={styles.links}>
             <div className={styles.linkIcon}>
-              <FiGithub />
+              <Link href={project?.githubLink} target={"_blank"}>
+                <FiGithub />
+              </Link>
             </div>
             <div className={styles.linkIcon}>
-              <FiExternalLink />
+              <Link href={project?.liveLink} target={"_blank"}>
+                <FiExternalLink />
+              </Link>
             </div>
           </div>
         </div>
