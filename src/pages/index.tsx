@@ -20,6 +20,7 @@ export default function Home(props: any) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const disatch = useDispatch();
 
+  console.log(props, "props");
   // dispatching site settings to redux
   disatch({ type: SITE_SETTINGS_FULLFILLED, payload: props });
 
@@ -53,8 +54,15 @@ export default function Home(props: any) {
 }
 
 export const getServerSideProps = async () => {
-  const data = await sanityClient.fetch(`*[_type == "siteSettings"][0]`);
-
+  const data = await sanityClient.fetch(`
+  *[_type == "siteSettings"][0]
+  {
+    ...,
+    aboutMeTechnologies[] ->{
+    name
+    }
+  }`);
+  console.log(data, "data");
   return {
     props: data,
   };

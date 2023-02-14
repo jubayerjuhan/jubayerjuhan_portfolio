@@ -2,10 +2,10 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 
 import localFont from "@next/font/local";
-import { useEffect, useState } from "react";
-import sanityClient from "../utils/sanityClient";
 import { Provider } from "react-redux";
-import { store } from "../redux/store";
+
+import { store, persistor } from "../redux/store";
+import { PersistGate } from "redux-persist/integration/react";
 
 const font = localFont({
   src: [
@@ -25,17 +25,19 @@ const font = localFont({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <Provider store={store}>
-      <main className={font.className}>
-        <header>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
-            rel="stylesheet"
-          />
-        </header>
-        <Component {...pageProps} />
-      </main>
+      <PersistGate persistor={persistor} loading={null}>
+        <main className={font.className}>
+          <header>
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" />
+            <link
+              href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+              rel="stylesheet"
+            />
+          </header>
+          <Component {...pageProps} />
+        </main>
+      </PersistGate>
     </Provider>
   );
 }

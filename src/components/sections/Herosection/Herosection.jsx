@@ -5,24 +5,20 @@ import animation from "../../../styles/Animation/slide_animation.module.scss";
 import { useSelector } from "react-redux";
 const Herosection = () => {
   const { siteSettings } = useSelector((state) => state.siteSettings);
-  console.log(siteSettings, "site settings");
+  console.log(siteSettings.aboutMeTechnologies);
   return (
     <section className={`sectionPadding ${styles.heroSection}`}>
       <div className={`${styles.helloString} ${animation.slide_top}`}>
         <p>Hello, my name is</p>
       </div>
       <div className={`${styles.name} ${animation.slide_top}`}>
-        <h3>Jubayer Juhan</h3>
+        <h3>{siteSettings.heroTitle}</h3>
       </div>
       <div className={`${styles.tagline} ${animation.slide_top}`}>
-        <h3>I build things for the web.</h3>
+        <h3>{siteSettings.heroSubtitle}</h3>
       </div>
       <div className={`${styles.description} ${animation.slide_top}`}>
-        <p>
-          I’m a software engineer specializing in building (and occasionally
-          designing) exceptional digital experiences. Currently, I’m focused on
-          building accessible, human-centered products at Upstatement.
-        </p>
+        <p>{siteSettings.description}</p>
       </div>
       <Button
         title="View Resume"
