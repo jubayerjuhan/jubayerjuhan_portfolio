@@ -5,20 +5,19 @@ import animation from "../../../styles/Animation/slide_animation.module.scss";
 import { useSelector } from "react-redux";
 const Herosection = () => {
   const { siteSettings } = useSelector((state) => state.siteSettings);
-  console.log(siteSettings.aboutMeTechnologies);
   return (
     <section className={`sectionPadding ${styles.heroSection}`}>
       <div className={`${styles.helloString} ${animation.slide_top}`}>
         <p>Hello, my name is</p>
       </div>
       <div className={`${styles.name} ${animation.slide_top}`}>
-        <h3>{siteSettings.heroTitle}</h3>
+        <h3>{siteSettings?.heroTitle}</h3>
       </div>
       <div className={`${styles.tagline} ${animation.slide_top}`}>
-        <h3>{siteSettings.heroSubtitle}</h3>
+        <h3>{siteSettings?.heroSubtitle}</h3>
       </div>
       <div className={`${styles.description} ${animation.slide_top}`}>
-        <p>{siteSettings.description}</p>
+        <p>{siteSettings?.description}</p>
       </div>
       <Button
         title="View Resume"

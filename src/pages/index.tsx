@@ -14,15 +14,22 @@ import Footer from "../components/sections/Footer/Footer";
 import sanityClient from "../utils/sanityClient";
 import { useDispatch } from "react-redux";
 import { SITE_SETTINGS_FULLFILLED } from "@/redux/name_variables/reduxNameVariables";
+import {
+  experienceQuery,
+  siteSettingsQuery,
+} from "../utils/queries/homepageQueries";
 
 const inter = Inter({ subsets: ["latin"] });
 export default function Home(props: any) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const disatch = useDispatch();
 
-  console.log(props, "props");
+  console.log(props.experiences);
   // dispatching site settings to redux
-  disatch({ type: SITE_SETTINGS_FULLFILLED, payload: props });
+  disatch({
+    type: SITE_SETTINGS_FULLFILLED,
+    payload: { ...props?.siteSettings, experiences: props.experiences },
+  });
 
   return (
     <>
@@ -54,16 +61,9 @@ export default function Home(props: any) {
 }
 
 export const getServerSideProps = async () => {
-  const data = await sanityClient.fetch(`
-  *[_type == "siteSettings"][0]
-  {
-    ...,
-    aboutMeTechnologies[] ->{
-    name
-    }
-  }`);
-  console.log(data, "data");
+  const siteSettings = await sanityClient.fetch(siteSettingsQuery);
+  const experiences = await sanityClient.fetch(experienceQuery);
   return {
-    props: data,
+    props: { siteSettings, experiences },
   };
 };

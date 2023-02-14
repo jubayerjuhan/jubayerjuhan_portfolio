@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import SectionHeader from "@/components/ui/SectionHeader/SectionHeader.jsx";
-import { workExperiences } from "../../../data/work_experience.js";
 import Experience from "../../ui/Experience/Experience.jsx";
 import CompanyButton from "../../core/CompanyButton/CompanyButton";
 import DynamicScroll from "../../core/Dynamicscroll/DynamicScroll";
 import styles from "./work.module.scss";
 import { useInView } from "react-intersection-observer";
+import { useSelector } from "react-redux";
 
 const Work = () => {
   const { ref, inView } = useInView({ threshold: 0 });
   const [showed, setShowed] = useState(false);
+  const { siteSettings } = useSelector((state) => state.siteSettings);
 
   useEffect(() => {
     if (inView) {
@@ -39,7 +40,7 @@ const Work = () => {
         >
           <DynamicScroll selectedIndex={selectedIndex} />
           <div className={styles.companies}>
-            {workExperiences.map((experience, key) => (
+            {siteSettings?.experiences?.map((experience, key) => (
               <CompanyButton
                 key={key}
                 index={key}

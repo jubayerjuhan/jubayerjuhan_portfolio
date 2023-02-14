@@ -30,7 +30,7 @@ const About = () => {
         <div className={styles.contentWrapper}>
           <div className={styles.textSection} ref={ref}>
             <div className={styles.description}>
-              <p>{siteSettings.abouMe}</p>
+              <p>{siteSettings?.abouMe}</p>
               {/* <p>
                 Fast-forward to today, and I’ve had the privilege of working at
                 an advertising agency, a start-up, a huge corporation, and a
@@ -49,7 +49,7 @@ const About = () => {
             </div>
 
             <div className={styles.skills}>
-              {siteSettings.aboutMeTechnologies.map((technology, key) => (
+              {siteSettings.aboutMeTechnologies?.map((technology, key) => (
                 <p className={styles.skill} key={key}>
                   {technology.name}
                 </p>

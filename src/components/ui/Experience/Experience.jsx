@@ -1,18 +1,23 @@
 import React from "react";
-import { workExperiences } from "../../../data/work_experience.js";
+import { useSelector } from "react-redux";
 
 const Experience = ({ styles, selectedIndex }) => {
+  const { siteSettings } = useSelector((state) => state.siteSettings);
+  const workExperiences = siteSettings.experiences;
+
   return (
     <div className={styles.experience}>
       <h4 className={styles.title}>
-        {workExperiences[selectedIndex]?.title}
+        {workExperiences[selectedIndex]?.position}
         <span className={styles.title__company_name}>
           @ {workExperiences[selectedIndex]?.company}
         </span>
       </h4>
-      <p className={styles.timeline}>{workExperiences[selectedIndex]?.time}</p>
+      <p className={styles.timeline}>
+        {workExperiences[selectedIndex]?.duration}
+      </p>
       <ul className={styles.taskList}>
-        {workExperiences[selectedIndex]?.tasks.map((task, key) => (
+        {workExperiences[selectedIndex]?.bullets.map((task, key) => (
           <li className={styles.task} key={key}>
             {task}
           </li>
