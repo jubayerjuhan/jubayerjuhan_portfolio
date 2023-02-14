@@ -11,3 +11,11 @@ export const siteSettingsQuery = `*[_type == "siteSettings"][0]
   name
   }
 }`;
+
+export const projectQuery = `*[_type == "projects"]
+{
+  ...,
+   technologies[] -> {
+     name
+   } 
+}`;

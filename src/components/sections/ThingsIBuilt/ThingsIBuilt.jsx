@@ -4,9 +4,12 @@ import ProjectCard from "../../ui/ProjectCard/ProjectCard";
 import styles from "./thingsIBuilt.module.scss";
 import animations from "../../../styles/Animation/slide_animation.module.scss";
 import { useInView } from "react-intersection-observer";
+import { useSelector } from "react-redux";
 
 const ThingsIBuilt = () => {
   const { ref, inView } = useInView({ threshold: 0 });
+  const { siteSettings } = useSelector((state) => state.siteSettings);
+
   return (
     <section
       ref={ref}
@@ -20,10 +23,9 @@ const ThingsIBuilt = () => {
         <SectionHeader title={"Thing's I've Built"} number={2} />
       </div>
       <div className={`${styles.builts}`}>
-        <ProjectCard style={styles.hide} />
-        <ProjectCard style={styles.hide} />
-        <ProjectCard style={styles.hide} />
-        <ProjectCard style={styles.hide} />
+        {siteSettings.projects?.map((project, key) => (
+          <ProjectCard style={styles.hide} key={key} project={project} />
+        ))}
       </div>
     </section>
   );

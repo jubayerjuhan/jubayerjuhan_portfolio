@@ -5,7 +5,8 @@ import projectImage from "../../../assets/project1.png";
 import Link from "next/link.js";
 import { FiExternalLink, FiGithub } from "react-icons/fi";
 import { useInView } from "react-intersection-observer";
-const ProjectCard = ({ style: parentStyle, animation }) => {
+import { imageBuilder } from "@/utils/sanityClient.js";
+const ProjectCard = ({ style: parentStyle, project }) => {
   const [alreadyAnimated, setAlreadyAnimated] = useState(false);
   const { ref, inView } = useInView({ threshold: 0 });
 
@@ -23,26 +24,27 @@ const ProjectCard = ({ style: parentStyle, animation }) => {
         }`}
       >
         <div className={styles.imageWrapper}>
-          <Image src={projectImage} alt="Project Image" />
+          <Image
+            src={imageBuilder(project.thumbnail)}
+            alt="Project Image"
+            width={1280}
+            height={720}
+          />
         </div>
         <div className={styles.textWrapper}>
           <p className={styles.subtitle}>Featured Projects</p>
           <Link className={styles.title} href="/">
-            My Instructor - Driving School{" "}
+            {project?.name}{" "}
           </Link>
           <div className={styles.description_wrapper}>
-            <p className={styles.description}>
-              A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm,
-              and more. Available on Visual Studio Marketplace, Package Control,
-              Atom Package Manager, and npm.
-            </p>
+            <p className={styles.description}>{project?.desctiption}</p>
           </div>
           <div className={styles.techs}>
-            <div className={styles.tech}>VS Code</div>
-            <div className={styles.tech}>Hyper</div>
-            <div className={styles.tech}>JavaScript</div>
-            <div className={styles.tech}>React</div>
-            <div className={styles.tech}>Redux</div>
+            {project.technologies.map((technology, key) => (
+              <div className={styles.tech} key={key}>
+                {technology.name}
+              </div>
+            ))}
           </div>
           <div className={styles.links}>
             <div className={styles.linkIcon}>

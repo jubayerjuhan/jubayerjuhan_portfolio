@@ -16,6 +16,7 @@ import { useDispatch } from "react-redux";
 import { SITE_SETTINGS_FULLFILLED } from "@/redux/name_variables/reduxNameVariables";
 import {
   experienceQuery,
+  projectQuery,
   siteSettingsQuery,
 } from "../utils/queries/homepageQueries";
 
@@ -28,7 +29,11 @@ export default function Home(props: any) {
   // dispatching site settings to redux
   disatch({
     type: SITE_SETTINGS_FULLFILLED,
-    payload: { ...props?.siteSettings, experiences: props.experiences },
+    payload: {
+      ...props?.siteSettings,
+      experiences: props.experiences,
+      projects: props.projects,
+    },
   });
 
   return (
@@ -63,7 +68,8 @@ export default function Home(props: any) {
 export const getServerSideProps = async () => {
   const siteSettings = await sanityClient.fetch(siteSettingsQuery);
   const experiences = await sanityClient.fetch(experienceQuery);
+  const projects = await sanityClient.fetch(projectQuery);
   return {
-    props: { siteSettings, experiences },
+    props: { siteSettings, experiences, projects },
   };
 };
