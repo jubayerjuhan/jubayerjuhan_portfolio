@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 
 import localFont from "@next/font/local";
 import { useEffect, useState } from "react";
+import sanityClient from "../utils/sanityClient";
 
 const font = localFont({
   src: [

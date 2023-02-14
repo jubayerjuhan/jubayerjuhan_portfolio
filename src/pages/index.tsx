@@ -11,9 +11,11 @@ import Work from "../components/sections/Work/Work";
 import ThingsIBuilt from "../components/sections/ThingsIBuilt/ThingsIBuilt";
 import OtherProjects from "../components/sections/OtherProjects/OtherProjects";
 import Footer from "../components/sections/Footer/Footer";
+import sanityClient from "../utils/sanityClient";
 
 const inter = Inter({ subsets: ["latin"] });
-export default function Home() {
+export default function Home(props: any) {
+  console.log(props, "props");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -44,3 +46,13 @@ export default function Home() {
     </>
   );
 }
+
+export const getServerSideProps = async () => {
+  console.log("Hello World...");
+  const data = await sanityClient.fetch(`*[_type == "siteSettings"][0]`);
+  console.log(data, "dataaa....");
+
+  return {
+    props: data,
+  };
+};
