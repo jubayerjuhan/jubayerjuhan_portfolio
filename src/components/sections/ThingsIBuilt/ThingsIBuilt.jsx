@@ -7,7 +7,6 @@ import { useInView } from "react-intersection-observer";
 
 const ThingsIBuilt = () => {
   const { ref, inView } = useInView({ threshold: 0 });
-  console.log(inView, "things i built");
   return (
     <section
       ref={ref}

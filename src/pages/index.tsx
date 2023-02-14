@@ -12,11 +12,16 @@ import ThingsIBuilt from "../components/sections/ThingsIBuilt/ThingsIBuilt";
 import OtherProjects from "../components/sections/OtherProjects/OtherProjects";
 import Footer from "../components/sections/Footer/Footer";
 import sanityClient from "../utils/sanityClient";
+import { useDispatch } from "react-redux";
+import { SITE_SETTINGS_FULLFILLED } from "@/redux/name_variables/reduxNameVariables";
 
 const inter = Inter({ subsets: ["latin"] });
 export default function Home(props: any) {
-  console.log(props, "props");
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const disatch = useDispatch();
+
+  // dispatching site settings to redux
+  disatch({ type: SITE_SETTINGS_FULLFILLED, payload: props });
 
   return (
     <>
@@ -48,9 +53,7 @@ export default function Home(props: any) {
 }
 
 export const getServerSideProps = async () => {
-  console.log("Hello World...");
   const data = await sanityClient.fetch(`*[_type == "siteSettings"][0]`);
-  console.log(data, "dataaa....");
 
   return {
     props: data,

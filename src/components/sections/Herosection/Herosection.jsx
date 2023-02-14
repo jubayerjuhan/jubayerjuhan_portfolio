@@ -2,7 +2,10 @@ import Button from "@/components/core/Button/Button.jsx";
 import React from "react";
 import styles from "./herosection.module.scss";
 import animation from "../../../styles/Animation/slide_animation.module.scss";
+import { useSelector } from "react-redux";
 const Herosection = () => {
+  const { siteSettings } = useSelector((state) => state.siteSettings);
+  console.log(siteSettings, "site settings");
   return (
     <section className={`sectionPadding ${styles.heroSection}`}>
       <div className={`${styles.helloString} ${animation.slide_top}`}>
