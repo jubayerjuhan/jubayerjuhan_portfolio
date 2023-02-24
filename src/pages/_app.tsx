@@ -1,5 +1,6 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
+import Script from "next/script";
 
 import localFont from "@next/font/local";
 import { Provider } from "react-redux";
@@ -28,6 +29,22 @@ export default function App({ Component, pageProps }: AppProps) {
       <PersistGate persistor={persistor} loading={null}>
         <main className={font.className}>
           <header>
+            <Script
+              strategy="afterInteractive"
+              src="https://www.googletagmanager.com/gtag/js?id=G-J638HY608D"
+            />
+            <Script
+              id="google-analytics"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+       
+                gtag('config', 'G-J638HY608D');`,
+              }}
+            />
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" />
             <link
