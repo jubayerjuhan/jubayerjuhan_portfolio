@@ -49,7 +49,6 @@ export default function Home(props: any) {
           setMobileMenuOpen={setMobileMenuOpen}
           mobileMenuOpen={mobileMenuOpen}
         />
-
         <MobileMenu open={mobileMenuOpen} />
         {/* side elements*/}
         <Emailelement />

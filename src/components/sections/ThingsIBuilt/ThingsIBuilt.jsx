@@ -16,15 +16,14 @@ const ThingsIBuilt = () => {
       className={`sectionPadding ${styles.thingsIBuilt} ${animations.fade} `}
     >
       <div
-        className={`${styles.sectionHead} ${
-          inView && styles.sectionHeadActive
-        }`}
+        className={`${styles.sectionHead} ${inView && styles.sectionHeadActive
+          }`}
       >
         <SectionHeader title={"Thing's I've Built"} number={2} />
       </div>
       <div className={`${styles.builts}`}>
         {siteSettings.projects?.map((project, key) => {
-          if (project.type !== "featured") return <div key={key}></div>;
+          if (project.type !== "featured") return <></>;
           return (
             <ProjectCard style={styles.hide} key={key} project={project} />
           );

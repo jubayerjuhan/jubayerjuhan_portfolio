@@ -12,7 +12,7 @@ const OtherProjects = () => {
       <MidSectionHeader styles={styles} />
       <div className={styles.projects}>
         {siteSettings.projects.map((project, key) => {
-          if (project.type !== "noteworthy") return <div key={key}></div>;
+          if (project.type !== "noteworthy") return <></>;
           return <SquareProjectCard project={project} key={key} />;
         })}
       </div>

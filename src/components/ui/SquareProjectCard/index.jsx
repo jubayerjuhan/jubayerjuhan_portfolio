@@ -3,11 +3,12 @@ import CardHeader from "./CardHeader";
 import styles from "./squareProjectCard.module.scss";
 
 const SquareProjectCard = ({ project }) => {
+  const truncatedDescription = project.description.split(" ").slice(0, 30).join(" ") + " ..."
   return (
     <div className={styles.squareProjectCard}>
       <CardHeader styles={styles} project={project} />
       <div className={styles.title}>{project.name}</div>
-      <div className={styles.description}>{project.description}</div>
+      <div className={styles.description}>{truncatedDescription}</div>
       <div className={styles.techs}>
         {project.technologies?.map((technology, key) => {
           return (
